@@ -9,8 +9,8 @@ $.ajaxPrefilter(function(opt){
     }
 
     opt.complete = function(res) {
-            
-        if(res.responseJSON.status == 1){
+       
+        if(res.responseJSON.status == 1 && res.responseJSON.message == '获取用户基本信息失败！' ){
             localStorage.removeItem('token')
             location.href = '/login.html'
         }

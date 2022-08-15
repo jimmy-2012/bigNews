@@ -27,13 +27,15 @@ function getUserinfo(){
 
 //渲染用户信息
 function renderUser(user){
-    let name = user.username || user.nickname
+    let name = user.nickname ||  user.username
 
     $('.welcome').html('欢迎 &nbsp;&nbsp;'+ name)
+   
 
-    if(user.user_pic !==null){
+    if(user.user_pic !== null){
         $('.layui-nav-img').attr('src',user.user_pic).show() 
-        $('.welcome').hide() 
+        $('.text-avatar').hide() 
+        
 
     }else{
         $('.layui-nav-img').hide()
